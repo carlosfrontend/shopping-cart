@@ -1,0 +1,16 @@
+.productsContainer {
+  composes: categoriesContainer from "/src/components/Categories/CategoriesPage.module.css";
+}
+
+.title{
+    composes: title from "/src/components/Categories/CategoriesPage.module.css";
+}
+
+@media (min-width:640px){
+    .productsContainer{
+        padding:6em;
+        display: grid;
+        justify-items: center;
+        align-content: center;
+    }
+}

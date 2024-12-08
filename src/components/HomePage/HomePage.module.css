@@ -1,0 +1,11 @@
+.homePageContainer{
+ min-height: 100vh;
+ margin-top:4em;
+}
+
+@media (min-width: 640px) {
+.homePageContainer{
+  margin-top: 0;
+  padding: 3em;
+}
+}

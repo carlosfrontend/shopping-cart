@@ -1,0 +1,88 @@
+.homeCard {
+  margin-top: 3em;
+  padding: 2em 1.5em;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 12px;
+}
+
+.imageContainer{
+    padding: 2em 0 1em;
+    max-width: 100%;
+}
+
+.image{
+    border-radius: 8px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.category{
+    color:#1c4a64;
+    padding: .4em 0;
+    font-size: 1.5rem;
+}
+
+.description{
+    line-height: 140%;
+    font-weight: bold;
+    max-width: 40ch;
+    font-weight: 400;
+    text-wrap: pretty;
+}
+
+.link{
+    background-color: black;
+    max-width: 150px;
+    height: 40px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    margin-top: .9em;
+    font-weight: 500;
+}
+
+.offers {
+    padding: 1em 0;
+    font-weight: bold;
+    background-color: #0e0d0d;
+    font-size: 1rem;
+    max-width: 35ch;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(24, 24, 24, 0.438);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8em 1em;
+    color: #c7c3c3;
+    
+  }
+
+  .offers> h2{
+    font-weight: 700;
+    line-height: 140%;
+  }
+  
+  @media (min-width: 640px) {
+    .offers {
+      padding: 0.5em;
+      max-width: 35ch;
+      font-size: 1.5em;
+    }
+    .homeCard {
+     place-self: center;
+     ;
+    }
+
+    .category{
+      font-size: 3rem;
+    }
+
+    .description{
+      font-size: 1.6rem;
+    }
+    
+  
+  }
+  

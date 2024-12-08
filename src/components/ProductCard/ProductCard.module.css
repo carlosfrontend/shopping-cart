@@ -1,0 +1,116 @@
+.productContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 1em;
+  flex-wrap: wrap;
+}
+
+.imageContainer {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer img {
+  width: 100%;
+  max-height: 200px;
+  max-width: 200px;
+  object-position: center center;
+  object-fit: contain;
+}
+
+.contentContainer {
+  padding: 1em 0;
+}
+
+.productTitle {
+  padding: 0.5em 0;
+  font-weight: 800;
+  max-width: 40ch;
+}
+
+.description {
+  padding: 0.5em 0;
+  max-width: 40ch;
+  text-wrap: pretty;
+  line-height: 140%;
+}
+
+.price {
+  display: block;
+  max-width: 200px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d1c1c;
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  padding-top: 0.3em;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 0.5em;
+  padding-top: 1em;
+}
+
+input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100px;
+  text-align: center;
+  height: auto;
+}
+
+.addContainer {
+  padding-top: 1em;
+  display: flex;
+  justify-content: start;
+}
+
+.addButton {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 0.6em;
+  border-radius: 30px;
+  background-color: rgb(61, 58, 58);
+  color: white;
+  gap: 0.5em;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 180px;
+}
+
+.minus,
+.plus {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .contentContainer{
+    padding: 2.3em 0;
+  }
+  .productContainer {
+    padding: 6em;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .price {
+    justify-content: center;
+  }
+
+  .addButton{
+    width: 300px;
+  }
+}

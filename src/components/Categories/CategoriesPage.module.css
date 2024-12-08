@@ -1,0 +1,21 @@
+.categoriesContainer{
+    min-height: 100vh;
+    padding: 8em .5em;
+    
+    display: flex;
+    flex-direction: column;
+    gap:2em;
+}
+
+.title{
+    padding-left: 1em;
+}
+
+@media (min-width:640px){
+    .categoriesContainer{
+        padding:6em;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+}

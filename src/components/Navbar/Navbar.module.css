@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&family=Readex+Pro:wght@160..700&display=swap");
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  background-color: #1f1b1b;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+}
+
+.brandTitle {
+  font-family: "Parkinsans", sans-serif;
+  font-size: 2em;
+}
+
+.brandContainer {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.brandLogo {
+  width: 24px;
+  height: 24px;
+}
+.open {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  background-color: #1f1b1b;
+  padding: 1em;
+  transform-origin: left;
+  animation: slideIn 0.3s normal forwards;
+  opacity: 0;
+  scale: 0;
+  position: fixed;
+  left:0;
+  top:3.8em;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(0%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    scale: 1;
+  }
+}
+
+.close {
+  width: 100%;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: left;
+  background-color: #1f1b1b;
+  transform-origin: left;
+  padding: 1em;
+  animation: slideOut 0.3s normal forwards;
+  position: fixed;
+}
+
+@keyframes slideOut {
+  0% {
+    display: flex;
+    transform: translateY(0%);
+    scale: 1;
+    opacity: 1;
+  }
+
+  75% {
+    scale: 0.9;
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(-100%);
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+.toggleButton {
+  background: none;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  color: white;
+}
+.open > li,
+.close > li {
+  list-style-type: none;
+  display: block;
+}
+
+.open > li > a,
+.close > li > a {
+  text-decoration: none;
+  color: #eee7e7de;
+  z-index: 999;
+  font-family: "Readex Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  transition: all ease-out 0.3s;
+}
+
+.open > li > a:active,
+.open > li > a:hover {
+  color: white;
+  transform: scale(1.1);
+  transform: translateY(10%);
+}
+
+.linkContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.closeMenu {
+  animation: rotateOpen 0.3s ease-in-out forwards;
+  transform: rotate(0);
+}
+
+@keyframes rotateOpen {
+  0% {
+    rotate: 0deg;
+  }
+  100% {
+    rotate: -90deg;
+  }
+}
+
+.menu {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .navbar {
+    width: 100%;
+    padding: 1em 2em;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+  }
+
+  .open,
+  .close {
+    display: none;
+  }
+
+  .brandTitle {
+    font-size: 1.8rem;
+    font-weight: 800;
+  }
+
+  .toggleButton {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+  }
+
+  .menu > li {
+    list-style-type: none;
+    display: block;
+  }
+
+  .linkContainer {
+    text-decoration: none;
+    color: #eee7e7de;
+    z-index: 999;
+    font-family: "Readex Pro", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .linkContainer:hover,
+  .linkContainer span:hover {
+    color: white;
+    transform: scale(1.1);
+    transform: translateY(10%);
+  }
+}

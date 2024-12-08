@@ -1,0 +1,17 @@
+.errorContainer{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.errorImage{
+    max-width: 300px;
+}
+
+.link{
+    composes: link from '../HomeCard/HomeCard.module.css';
+    width: 15em;
+    color:lightblue;
+}
