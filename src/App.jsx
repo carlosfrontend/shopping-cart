@@ -13,12 +13,12 @@ function App() {
   ];
 
   return (
-    <>
+    <div data-testid='app'>
       <ScrollToTop />
       <Navbar title={"Deals Shop"} imageUrl={BrandLogo} links={links} />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 }
 

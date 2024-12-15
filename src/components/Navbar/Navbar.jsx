@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes, { any, objectOf } from "prop-types";
 import { Menu, X } from "lucide-react";
 import CartCounter from "../CartCounter/CartCounter";
@@ -29,8 +29,7 @@ const Navbar = ({ imageUrl, title, links }) => {
   };
   return (
     <>
-      {" "}
-      <nav className={styles.navbar}>
+      <nav data-testid="navbar" className={styles.navbar}>
         <Link to={"/"} className={styles.brandContainer}>
           <img
             className={styles.brandLogo}
@@ -40,25 +39,25 @@ const Navbar = ({ imageUrl, title, links }) => {
           <h1 className={styles.brandTitle}>{title}</h1>
         </Link>
         <ul id="menu" className={styles.menu}>
-        {links.map((link) => (
-          <li key={link.id}>
-            <NavLink to={link.path} className={styles.linkContainer}>
-              {link.icon}
-              {link.name}
-              {link.id === 2 && <CartCounter />}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+          {links.map((link) => (
+            <li key={link.id}>
+              <Link to={link.path} className={styles.linkContainer}>
+                {link.icon}
+                {link.name}
+                {link.id === 2 && <CartCounter />}
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-        <button title={isMenuOpen ? 'close main menu' :'open main menu'} onClick={handleClick} className={styles.toggleButton}>
+        <button
+          title={isMenuOpen ? "close main menu" : "open main menu"}
+          onClick={handleClick}
+          className={styles.toggleButton}
+        >
           <span>
             {isMenuOpen ? (
-              <X
-                className={
-                  isMenuOpen && styles.closeMenu
-                }
-              />
+              <X className={isMenuOpen && styles.closeMenu} />
             ) : (
               <Menu />
             )}
@@ -68,11 +67,11 @@ const Navbar = ({ imageUrl, title, links }) => {
       <ul id="dropdownMenu" className={isMenuOpen ? styles.open : styles.close}>
         {links.map((link) => (
           <li key={link.id}>
-            <NavLink to={link.path} className={styles.linkContainer}>
+            <Link to={link.path} className={styles.linkContainer}>
               {link.icon}
               {link.name}
               {link.id === 2 && <CartCounter />}
-            </NavLink>
+            </Link>
           </li>
         ))}
       </ul>
