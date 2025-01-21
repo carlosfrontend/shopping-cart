@@ -1,0 +1,107 @@
+.products {
+  margin-top: 2em;
+}
+
+.productData{
+    border: 1px solid white;
+    margin: 4em;
+    border-radius: 10px;
+    padding: 1.5em 2em;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #c1df56;
+  text-shadow: 1px 1px 1px #ffffff;
+}
+
+.price{
+    padding-top: 1em;
+    color: #e908e9;
+    font-size: 2rem;
+}
+
+.imgCard {
+  display: flex;
+  gap: 1em;
+  width: 100%;
+  margin: 2em 0;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.productImage {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 8px;
+}
+
+.imgCard p {
+  color: #fffbfee8;
+  line-height: 180%;
+  font-size: 1.2em;
+  font-weight: 100;
+  text-wrap: text-pretty;
+}
+
+.quantityInput {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: right;
+  align-items: center;
+  width: 70px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.roundedButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+.roundedButton:hover{
+ transform: scale(.8);
+ 
+}
+
+.roundedButton > svg {
+  width: 40px;
+  height: 40px;
+  color: violet;
+  transition: color .2s ease-in-out;
+}
+.roundedButton > svg:hover {
+    color: orangered;
+  }
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.addButton{
+    font-size: 1.6rem;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background-color: #a7e277;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all .2s ease-in-out;
+}
+
+.addButton:hover{
+    background-color: #b816aa;
+    color: white;
+    transform: scale(.98);
+}

@@ -1,0 +1,70 @@
+.homeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  place-content: center;
+  padding: 2em;
+  border-radius: 14px;
+  box-shadow: 0px 1px 20px 0px #333333;
+}
+.cardImage {
+  width: 18em;
+  height: 12em;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.title {
+  font-family: 'Borel', serif;
+  text-align: center;
+  font-size: 2.5em;
+  padding: 28px 0 0 0;
+  color: #ffffff;
+}
+
+.subtitle {
+  font-family: 'Comfortaa', serif;
+  font-size: 1.4em;
+  text-align: center;
+  color: #e3d4ce;
+}
+
+.buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 3em;
+}
+
+.goLink {
+  font-family: 'Comfortaa', serif;
+  background-color: #c1df56;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 10px;
+  width: 8em;
+  height: 2em;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  transition: color transform .2s ease-in-out;
+}
+
+.goLink:hover{
+background-color: transparent;
+outline: 8px solid  #c1df56;
+color: #c1df56;
+transform: translateY(20%);
+border-radius: 14px;
+}

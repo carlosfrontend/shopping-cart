@@ -1,0 +1,42 @@
+.navbar {
+  width: 18em;
+  /* background-color: red; */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 6em;
+  }
+  
+  .item {
+  list-style-type: none;
+  display: flex;
+}
+
+.item > span{
+font-size: 1.2rem;
+}
+
+.link {
+    display: inline-block;
+    font-size: 1.8em;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    font-family: 'Comfortaa', serif;
+}
+
+.link:hover{
+  color: #4e3e6d;
+  transform: scale(.8);
+  font-weight: 800;
+}
+
+.shoppingCart{
+  width: 34px;
+  height: auto;
+}
+

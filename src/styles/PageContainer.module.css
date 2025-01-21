@@ -1,0 +1,5 @@
+.mainContainer{
+    min-height: 100vh;
+    background-color: rgb(28 28 28 / 96%);
+    padding-top: 6em;
+}

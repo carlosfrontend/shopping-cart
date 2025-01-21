@@ -1,0 +1,17 @@
+.header{
+    background-color: #c1df56;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1em;
+    height: 6em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.brandImage{
+    width: 14em;
+    height: auto;
+}
