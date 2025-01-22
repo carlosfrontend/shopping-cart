@@ -1,12 +1,17 @@
 .products {
-  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .productData{
     border: 1px solid white;
-    margin: 4em;
+    margin: 4em 0;
     border-radius: 10px;
     padding: 1.5em 2em;
+    margin: 2em  1em;
+    width: 800px;
 }
 
 .title {
@@ -44,7 +49,7 @@
   line-height: 180%;
   font-size: 1.2em;
   font-weight: 100;
-  text-wrap: text-pretty;
+  text-wrap: pretty;
 }
 
 .quantityInput {
