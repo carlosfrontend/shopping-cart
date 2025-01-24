@@ -82,7 +82,7 @@
   transition: color .2s ease-in-out;
 }
 .roundedButton > svg:hover {
-    color: orangered;
+    color: #9dff00;
   }
 
 .controls {

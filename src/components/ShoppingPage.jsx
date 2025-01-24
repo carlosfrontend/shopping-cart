@@ -2,15 +2,14 @@ import { useProducts } from '../hooks/useProducts';
 import styles from '../styles/ShoppingPage.module.css';
 import { Loader } from './Loader';
 import { ProductCard } from './ProductCard';
-import PropTypes from 'prop-types';
 import { useOutletContext } from 'react-router-dom';
 
 export const ShoppingPage = () => {
   const cartContext = useOutletContext();
-  const { cartItemsNumber, setCartItemsNumber } = cartContext;
+  const { cartItemsNumber, setCartItemsNumber, store, setStore } = cartContext;
   const { products, loading, error } = useProducts();
 
-  if (loading) return <Loader/>;
+  if (loading) return <Loader />;
   if (error) return <p>A network error was encountered {error.message}</p>;
 
   return (
@@ -22,13 +21,10 @@ export const ShoppingPage = () => {
           product={product}
           cartItemsNumber={cartItemsNumber}
           setItemsNumber={setCartItemsNumber}
+          store={store}
+          setStore={setStore}
         />
       ))}
     </section>
   );
-};
-
-ShoppingPage.propTypes = {
-  cartItemsNumber: PropTypes.number,
-  setItemsNumber: PropTypes.func
 };

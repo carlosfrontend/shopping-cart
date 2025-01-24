@@ -6,9 +6,12 @@ import { useState } from 'react';
 
 export const PageContainer = () => {
   const [cartItemsNumber, setCartItemsNumber] = useState(0);
+  const [store, setStore] = useState([]);
   const cartContext = {
     cartItemsNumber: cartItemsNumber,
-    setCartItemsNumber: setCartItemsNumber
+    setCartItemsNumber: setCartItemsNumber,
+    store: store,
+    setStore: setStore
   };
 
   return (

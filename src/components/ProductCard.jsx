@@ -8,7 +8,13 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const notify = () => toast.success('The product was \nadded successfully !');
 
-export const ProductCard = ({ product, cartItemsNumber, setItemsNumber }) => {
+export const ProductCard = ({
+  product,
+  cartItemsNumber,
+  setItemsNumber,
+  store,
+  setStore
+}) => {
   const [quantity, setQuantity] = useState(0);
 
   const handleChange = (e) => {
@@ -27,11 +33,32 @@ export const ProductCard = ({ product, cartItemsNumber, setItemsNumber }) => {
   };
 
   const addToCart = () => {
-    const newQuantity = cartItemsNumber + quantity;
+    const newProduct = {
+      ...product,
+      quantity: quantity,
+      amount: (quantity * product.price).toFixed(2)
+    };
+
     if (quantity > 0) {
+      const newQuantity = cartItemsNumber + quantity;
       setItemsNumber(newQuantity);
       notify();
-      setQuantity(0)
+      setQuantity(0);
+      if (store.find((item) => item.id === product.id) === undefined) {
+        setStore([...store, newProduct]);
+      } else {
+        const newStore = [...store];
+        const index = newStore.findIndex((item) => item.id == product.id);
+        const oldQuantity = newStore[index].quantity;
+        setItemsNumber(newQuantity);
+        setQuantity(0);
+        newStore.splice(index, 1, {
+          ...newProduct,
+          quantity: quantity + oldQuantity,
+          amount: (product.price * (quantity + oldQuantity)).toFixed(2)
+        });
+        setStore(newStore);
+      }
     }
   };
 
@@ -48,7 +75,7 @@ export const ProductCard = ({ product, cartItemsNumber, setItemsNumber }) => {
             className={styles.productImage}
             width={100}
             src={product.image}
-            alt=''
+            alt={product.title}
           />
           <p>{product.description}</p>
         </div>
@@ -80,7 +107,7 @@ export const ProductCard = ({ product, cartItemsNumber, setItemsNumber }) => {
           <button
             className={styles.addButton}
             type='button'
-            onClick={(quantity) => addToCart(quantity)}
+            onClick={addToCart}
           >
             <CartLogo />
             Add to Cart
@@ -105,5 +132,7 @@ ProductCard.propTypes = {
     })
   }),
   cartItemsNumber: PropTypes.number,
-  setItemsNumber: PropTypes.func
+  setItemsNumber: PropTypes.func,
+  store: PropTypes.array.isRequired,
+  setStore: PropTypes.func.isRequired
 };
