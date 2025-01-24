@@ -64,6 +64,7 @@ export const ProductCard = ({
 
   return (
     <article className={styles.products}>
+      <Toaster />
       <article className={styles.productData} key={product.id}>
         <p className={styles.title}>
           {product.title}
@@ -103,7 +104,6 @@ export const ProductCard = ({
           >
             <PlusIcon />
           </button>
-          <Toaster />
           <button
             className={styles.addButton}
             type='button'
