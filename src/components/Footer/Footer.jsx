@@ -20,7 +20,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className={styles.attrContainer}>
-        <div className={styles.attrLinks}>
+        <div data-testid='attr' className={styles.attrLinks}>
           <small>
             Photo by{' '}
             <a href='https://unsplash.com/es/@spoony?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash' target='_blank' referrerPolicy='no-referrer'>

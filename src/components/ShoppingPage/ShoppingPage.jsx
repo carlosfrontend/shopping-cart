@@ -3,6 +3,7 @@ import styles from './ShoppingPage.module.css';
 import { Loader } from '../Loader/Loader';
 import { ProductCard } from '../ProductCard/ProductCard';
 import { useOutletContext } from 'react-router-dom';
+import { NetworkError } from '../NetworkError/NetworkError';
 
 export const ShoppingPage = () => {
   const cartContext = useOutletContext();
@@ -10,7 +11,7 @@ export const ShoppingPage = () => {
   const { products, loading, error } = useProducts();
 
   if (loading) return <Loader />;
-  if (error) return <p>A network error was encountered {error.message}</p>;
+  if (error) return <NetworkError error={error}/>;
 
   return (
     <section className={styles.shoppingSection}>
