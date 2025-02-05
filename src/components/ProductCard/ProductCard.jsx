@@ -133,6 +133,6 @@ ProductCard.propTypes = {
   }),
   cartItemsNumber: PropTypes.number,
   setItemsNumber: PropTypes.func,
-  store: PropTypes.array.isRequired,
-  setStore: PropTypes.func.isRequired
+  store: PropTypes.array,
+  setStore: PropTypes.func
 };
