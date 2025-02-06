@@ -4,10 +4,6 @@ export const NetworkError = ({error}) => {
     return <p>A network error was encountered {error.message}</p>
 }
 
-NetworkError.defaultProps = {
-    error: PropTypes.number
-}
-
 NetworkError.propTypes = {
-    error: PropTypes.object
+    error: PropTypes.oneOfType([PropTypes.number, PropTypes.object, PropTypes.string])
 }
